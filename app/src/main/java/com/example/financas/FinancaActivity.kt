@@ -46,18 +46,23 @@ class FinancaActivity : AppCompatActivity() {
 
         if (salarioStr.isNotEmpty()) {
             val salario = salarioStr.toDouble()
-
-            // Lógica para calcular gastos
-            val gastosComDespesas = salario + totalGastos // Adiciona os gastos totais ao salário
+            val gastosComDespesas = salario - totalGastos
+            var recomendacao = ""
+            var mensagem = ""
 
             // Lógica para recomendação com base nos gastos
-            val recomendacao = when {
-                gastosComDespesas < 0.3 * salario -> "Você está economizando bem!"
-                gastosComDespesas < 0.5 * salario -> "Considere economizar um pouco mais."
-                else -> "Seus gastos estão altos. Considere fazer um orçamento."
+            if(totalGastos == 0.0){
+                mensagem = "Você não teve gastos esse mês, continue assim."
+            } else {
+                recomendacao = when {
+                    totalGastos == 0.0 -> "Você não teve gastos esse mês, continue assim."
+                    gastosComDespesas < 0.3 * salario -> "Você está economizando bem!"
+                    gastosComDespesas < 0.5 * salario -> "Considere economizar um pouco mais."
+                    else -> "Seus gastos estão altos. Considere fazer um orçamento."
+                }
+                mensagem = "Você gastou $gastosComDespesas. $recomendacao"
             }
 
-            val mensagem = "Você gastou $gastosComDespesas. $recomendacao"
             txtResultado.text = mensagem
         } else {
             txtResultado.text = "Digite o salário antes de calcular."

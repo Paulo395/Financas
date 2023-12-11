@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 
 class DespesaActivity : AppCompatActivity() {
     private lateinit var btnAdicionarGasto: Button
-    private lateinit var btnCalcularGastos: Button
+    private lateinit var btnRetornar: Button
     private lateinit var valorGastoEditText: EditText
+    private lateinit var txtTotalGastos: TextView
     private var totalGastos: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,15 +19,16 @@ class DespesaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_despesa)
 
         btnAdicionarGasto = findViewById(R.id.btnAdicionarGasto)
-        btnCalcularGastos = findViewById(R.id.btnCalcularGastos)
+        btnRetornar = findViewById(R.id.btnRetornar)
         valorGastoEditText = findViewById(R.id.editValorGasto)
+        txtTotalGastos = findViewById(R.id.txtTotalGastos)
 
         btnAdicionarGasto.setOnClickListener {
             adicionarGasto()
         }
 
-        btnCalcularGastos.setOnClickListener {
-            calcularGastos()
+        btnRetornar.setOnClickListener {
+            retornarValor()
         }
     }
 
@@ -38,10 +41,13 @@ class DespesaActivity : AppCompatActivity() {
 
             // Limpa o campo de entrada
             valorGastoEditText.text.clear()
+
+            //Exibe o total de gastos em tela
+            txtTotalGastos.text = totalGastos.toString()
         }
     }
 
-    private fun calcularGastos() {
+    private fun retornarValor() {
         // Passa o total de gastos para a FinancaActivity
         val intent = Intent(this, FinancaActivity::class.java)
         intent.putExtra("totalGastos", totalGastos)

@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun validarCredenciais(nomeUsuario: String, senha: String): Boolean {
-        val usuarioCorreto = "exemplo"
-        val senhaCorreta = "senha123"
+        val usuarioCorreto = "a"
+        val senhaCorreta = "a"
         return nomeUsuario == usuarioCorreto && senha == senhaCorreta
     }
 }
