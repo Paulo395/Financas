@@ -12,8 +12,6 @@ class FinancaActivity : AppCompatActivity() {
     private lateinit var btnCalcular: Button
     private lateinit var salario: EditText
     private lateinit var txtResultado: TextView
-
-    // Variável para armazenar o valor total de gastos
     private var totalGastos: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +23,7 @@ class FinancaActivity : AppCompatActivity() {
         salario = findViewById(R.id.editSalario)
         txtResultado = findViewById(R.id.txtResultado)
 
-        // Verifica se há dados extras na intent (valor total de gastos da DespesaActivity)
+        // Verifica se há dados extras na intent
         val extras = intent.extras
         if (extras != null && extras.containsKey("totalGastos")) {
             totalGastos = extras.getDouble("totalGastos")
@@ -52,7 +50,7 @@ class FinancaActivity : AppCompatActivity() {
 
             // Lógica para recomendação com base nos gastos
             if(totalGastos == 0.0){
-                mensagem = "Você não teve gastos esse mês, continue assim."
+                mensagem = "Você não cadastrou nenhuma despesa!."
             } else {
                 recomendacao = when {
                     totalGastos == 0.0 -> "Você não teve gastos esse mês, continue assim."

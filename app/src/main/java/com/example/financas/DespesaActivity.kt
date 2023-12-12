@@ -41,14 +41,11 @@ class DespesaActivity : AppCompatActivity() {
 
             // Limpa o campo de entrada
             valorGastoEditText.text.clear()
-
-            //Exibe o total de gastos em tela
             txtTotalGastos.text = totalGastos.toString()
         }
     }
 
     private fun retornarValor() {
-        // Passa o total de gastos para a FinancaActivity
         val intent = Intent(this, FinancaActivity::class.java)
         intent.putExtra("totalGastos", totalGastos)
         startActivity(intent)
