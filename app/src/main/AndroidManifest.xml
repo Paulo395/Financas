@@ -16,6 +16,9 @@
             android:name=".CalculoActivity"
             android:exported="false" />
         <activity
+            android:name=".TesteActivity"
+            android:exported="false" />
+        <activity
             android:name=".DespesaActivity"
             android:exported="false" />
         <activity
