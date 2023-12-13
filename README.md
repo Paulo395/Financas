@@ -1,5 +1,5 @@
 # Financas
-Aplicativo voltado para o axilio nos gastoms mensais, dado o salario do mês descontanto as desepesas o aplicativo fara uma recomendação diferente para seu estado financeiro!
+Aplicativo voltado para o axilio nos gastos mensais, dado o salario do mês descontanto as desepesas o aplicativo fara uma recomendação diferente para seu estado financeiro!
 
 # 0.1.2
 Alteração na logica de recebimento de infomaçoes entre as Activity e logica de calculo de despesas.

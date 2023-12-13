@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
             if (validarCredenciais(nomeUsuario, senha)) {
                 val intent = Intent(this, FinancaActivity::class.java)
-                intent.putExtra("nomeUsuario", nomeUsuario)
                 startActivity(intent)
             } else {
                 tvErro.text = "Credenciais inválidas"
@@ -37,8 +36,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun validarCredenciais(nomeUsuario: String, senha: String): Boolean {
-        val usuarioCorreto = ""
-        val senhaCorreta = ""
+        val usuarioCorreto = "usuario"
+        val senhaCorreta = "senha"
         return nomeUsuario == usuarioCorreto && senha == senhaCorreta
     }
 }
