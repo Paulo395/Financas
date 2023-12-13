@@ -45,7 +45,6 @@ class FinancaActivity : AppCompatActivity() {
         if (salarioStr.isNotEmpty()) {
             val salario = salarioStr.toDouble()
             val porcentagemGastos = (totalGastos / salario) * 100
-            val gastosComDespesas = salario + totalGastos
             var mensagem = ""
 
             // Lógica para recomendação com base nos gastos

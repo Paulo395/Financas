@@ -12,3 +12,6 @@ Modificações no layout para maior estabilidade.
 
 # 0.2.1
 Reajuste de logica de recomendações.
+
+# 0.3.2
+Novo Icon e Background.
