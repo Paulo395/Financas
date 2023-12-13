@@ -1,11 +1,11 @@
-# Financas
-Aplicativo voltado para o axilio nos gastos mensais, dado o salario do mês descontanto as desepesas o aplicativo fara uma recomendação diferente para seu estado financeiro!
+# Finanças
+Aplicativo voltado para o auxílio nos gastos mensais, dado o salário do mês descontado as despesas o aplicativo fara uma recomendação diferente para seu estado financeiro!
 
 # 0.1.2
-Alteração na logica de recebimento de infomaçoes entre as Activity e logica de calculo de despesas.
+Alteração na lógica de recebimento de informações entre as Activity e logica de cálculo de despesas.
 
 # 0.1.3
-Alterções gerais no visual do projeto.
+Alterações gerais no visual do projeto.
 
 # 0.1.4
 Modificações no layout para maior estabilidade.
@@ -14,7 +14,7 @@ Modificações no layout para maior estabilidade.
 Reajuste de logica de recomendações.
 
 # 0.3.2
-Novo Icon e Background.
+Novo Icone e Background.
 
 # 0.4.2
-Tela login refeita com icon do aplicativo e novo estilo aos botoes.
+Tela login refeita com ícone do aplicativo e modificações nas credenciais, novo estilo aos botões.
