@@ -1,8 +1,14 @@
 # Financas
-Projeto final curso de Kotlin
+Aplicativo voltado para o axilio nos gastoms mensais, dado o salario do mês descontanto as desepesas o aplicativo fara uma recomendação diferente para seu estado financeiro!
 
-# Coreção de logica
+# 0.1.2
+Alteração na logica de recebimento de infomaçoes entre as Activity e logica de calculo de despesas.
 
-# Alteração no Design
+# 0.1.3
+Alterções gerais no visual do projeto.
 
-# Layout Estavel
+# 0.1.4
+Modificações no layout para maior estabilidade.
+
+# 0.2.1
+Reajuste de logica de recomendações.
