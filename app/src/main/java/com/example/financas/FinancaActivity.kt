@@ -44,21 +44,20 @@ class FinancaActivity : AppCompatActivity() {
 
         if (salarioStr.isNotEmpty()) {
             val salario = salarioStr.toDouble()
-            val gastosComDespesas = salario - totalGastos
-            var recomendacao = ""
+            val porcentagemGastos = (totalGastos / salario) * 100
+            val gastosComDespesas = salario + totalGastos
             var mensagem = ""
 
             // Lógica para recomendação com base nos gastos
-            if(totalGastos == 0.0){
+            if (totalGastos == 0.0) {
                 mensagem = "Você não cadastrou nenhuma despesa!."
             } else {
-                recomendacao = when {
-                    totalGastos == 0.0 -> "Você não teve gastos esse mês, continue assim."
-                    gastosComDespesas < 0.3 * salario -> "Você está economizando bem!"
-                    gastosComDespesas < 0.5 * salario -> "Considere economizar um pouco mais."
-                    else -> "Seus gastos estão altos. Considere fazer um orçamento."
+                mensagem = when {
+                    porcentagemGastos <= 30 -> "Você está economizando bem!"
+                    porcentagemGastos <= 50 -> "Situação normal."
+                    porcentagemGastos <= 100 -> "Considere economizar."
+                    else -> "Seus gastos passaram do seu salario, considere economizar."
                 }
-                mensagem = "Você gastou $gastosComDespesas. $recomendacao"
             }
 
             txtResultado.text = mensagem
