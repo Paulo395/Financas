@@ -15,3 +15,6 @@ Reajuste de logica de recomendações.
 
 # 0.3.2
 Novo Icon e Background.
+
+# 0.4.2
+Tela login refeita com icon do aplicativo e novo estilo aos botoes.
