@@ -35,33 +35,22 @@ class FinancaActivity : AppCompatActivity() {
         }
 
         btnCalcular.setOnClickListener {
-            calcularGastos()
-        }
-    }
-
-    private fun calcularGastos() {
-        val salarioStr = salario.text.toString()
-
-        if (salarioStr.isNotEmpty()) {
-            val salario = salarioStr.toDouble()
-            val porcentagemGastos = (totalGastos / salario) * 100
-            var mensagem = ""
-
-            // Lógica para recomendação com base nos gastos
-            if (totalGastos == 0.0) {
-                mensagem = "Você não cadastrou nenhuma despesa!."
+            if(totalGastos == 0.0) {
+                txtResultado.text = "Você não cadastrou nenhuma despesa!."
             } else {
-                mensagem = when {
-                    porcentagemGastos <= 30 -> "Você está economizando bem!"
-                    porcentagemGastos <= 50 -> "Situação normal."
-                    porcentagemGastos <= 100 -> "Considere economizar."
-                    else -> "Seus gastos passaram do seu salario, considere economizar."
+                val salarioStr = salario.text.toString()
+
+                if (salarioStr.isNotEmpty()) {
+                    val salarioDouble = salarioStr.toDouble()
+
+                    val intent = Intent(this, ResultadoActivity::class.java)
+                    intent.putExtra("salario", salarioDouble)
+                    intent.putExtra("totalGastos", totalGastos)
+                    startActivity(intent)
+                } else {
+                    txtResultado.text = "Digite um valor de salário antes de calcular."
                 }
             }
-
-            txtResultado.text = mensagem
-        } else {
-            txtResultado.text = "Digite o salário antes de calcular."
         }
     }
 }
