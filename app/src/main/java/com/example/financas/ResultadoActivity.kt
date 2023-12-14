@@ -34,20 +34,17 @@ class ResultadoActivity : AppCompatActivity() {
 
     private fun calcularGastos() {
         val porcentagemGastos = (totalGastos / salario) * 100
-        var mensagem = ""
 
-        // Lógica para recomendação com base nos gastos
-        if (totalGastos == 0.0) {
-            mensagem = "Você não cadastrou nenhuma despesa!."
-        } else {
-            mensagem = when {
-                porcentagemGastos <= 30 -> "Você está economizando bem!"
-                porcentagemGastos <= 50 -> "Situação normal."
-                porcentagemGastos <= 100 -> "Considere economizar."
-                else -> "Seus gastos passaram do seu salario, considere economizar."
-            }
+        val mensagem = when {
+            porcentagemGastos <= 20 -> "Você está economizando muito bem! Continue assim."
+            porcentagemGastos <= 40 -> "Você está em uma boa situação financeira."
+            porcentagemGastos <= 60 -> "Situação financeira normal."
+            porcentagemGastos <= 80 -> "Considere economizar um pouco mais para melhorar sua situação."
+            porcentagemGastos <= 100 -> "Seus gastos estão elevados. É hora de repensar seus hábitos financeiros."
+            else -> "Atenção! Seus gastos ultrapassaram sua receita. É essencial reavaliar seus gastos e economizar."
         }
 
-        txtResultado.text = mensagem
+        val mensagemFinal = "$mensagem\n\nVocê gastou ${"%.2f".format(porcentagemGastos)}% do seu salário."
+        txtResultado.text = mensagemFinal
     }
 }

@@ -35,20 +35,21 @@ class FinancaActivity : AppCompatActivity() {
         }
 
         btnCalcular.setOnClickListener {
-            // Obter o valor do EditText (salario)
-            val salarioStr = salario.text.toString()
-
-            // Verificar se o valor não está vazio
-            if (salarioStr.isNotEmpty()) {
-                val salarioDouble = salarioStr.toDouble()
-
-                // Criar a Intent e passar o Double como extra
-                val intent = Intent(this, ResultadoActivity::class.java)
-                intent.putExtra("salario", salarioDouble)
-                intent.putExtra("totalGastos", totalGastos)
-                startActivity(intent)
+            if(totalGastos == 0.0) {
+                txtResultado.text = "Você não cadastrou nenhuma despesa!."
             } else {
-                txtResultado.text = "Digite um valor de salário antes de calcular."
+                val salarioStr = salario.text.toString()
+
+                if (salarioStr.isNotEmpty()) {
+                    val salarioDouble = salarioStr.toDouble()
+
+                    val intent = Intent(this, ResultadoActivity::class.java)
+                    intent.putExtra("salario", salarioDouble)
+                    intent.putExtra("totalGastos", totalGastos)
+                    startActivity(intent)
+                } else {
+                    txtResultado.text = "Digite um valor de salário antes de calcular."
+                }
             }
         }
     }

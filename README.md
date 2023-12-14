@@ -16,5 +16,8 @@ Reajuste de logica de recomendações.
 # 0.3.2
 Novo Icone e Background.
 
-# 0.4.2
+# 0.4.0
 Tela login refeita com ícone do aplicativo e modificações nas credenciais, novo estilo aos botões.
+
+# 0.4.1
+Nova Activity Resultado acresentada, melhoria nas recomendações de gastos.
